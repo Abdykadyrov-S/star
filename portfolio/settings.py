@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # apps
     'apps.base',
     'apps.blog',
+    'apps.telegram_bot',
 ]
 
 MIDDLEWARE = [

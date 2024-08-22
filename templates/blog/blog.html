@@ -62,30 +62,31 @@
 							<!-- Start Blog Post -->
 							<div class="single-blog-post-wrap grid isotope_wrap">
 								<div class="row">
+									{% for blog in blogs %}
 									<div class="col-lg-4 col-sm-6 isotope_item">
 										<!-- Start single blog post -->
 										<div class="single-blog-post">
 											<!-- Start blog post thumbnail -->
 											<div class="post-thumbnail">
-												<img src="{% static 'img/post/g1.jpg' %}" alt="">
+												<img style="height: 400px;" src="{{blog.image.url}}" alt="">
 											</div>
 											<!-- End blog post thumbnail -->
 											<div class="single-post-content-thumb">
 												<!-- Start post meta -->
 												<div class="post-meta">
-													<span><i class="fal fa-clock"></i>Sep 11, 2024</span>
+													<span><i class="fal fa-clock"></i>{{blog.created_at}}</span>
 													<span><i class="fad fa-user"></i>Liza De</span>
 													<span><i class="fal fa-comments"></i>12</span>
 												</div>
 												<!-- End post meta -->
 												<!-- start entry header -->
 												<div class="entry-header">
-													<a href="#"><h2 class="entry-title">The Only Beach Packing List You’ll Ever Need</h2></a>
+													<a href="{% url 'blog_detail' blog.id %}"><h2 class="entry-title">{{blog.title}}</h2></a>
 												</div>
 												<!-- end entry header -->
 												<!-- Start entry content -->
 												<div class="entry-content">
-													<p>We here at Outdoor Adventures believe that the great outdoors is an excellent place for Michigan families to spend quality time together. We make it our goal to provide the very best surroundings, amenities.</p>
+													<p>{{blog.description}}</p>
 													<a href="#" class="btn more">Read More <i class="fal fa-angle-right"></i></a>
 												</div>
 												<!-- End entry content -->
@@ -93,254 +94,7 @@
 										</div>
 										<!-- End single blog post -->
 									</div>
-									<div class="col-lg-4 col-sm-6 isotope_item">
-										<!-- Start single blog post -->
-										<div class="single-blog-post">
-											<!-- Start blog post thumbnail -->
-											<div class="post-thumbnail">
-												<img src="{% static 'img/post/g2.jpg' %}" alt="">
-											</div>
-											<!-- End blog post thumbnail -->
-											<div class="single-post-content-thumb">
-												<!-- Start post meta -->
-												<div class="post-meta">
-													<span><i class="fal fa-clock"></i>Sep 11, 2024</span>
-													<span><i class="fad fa-user"></i>Liza De</span>
-													<span><i class="fal fa-comments"></i>12</span>
-												</div>
-												<!-- End post meta -->
-												<!-- start entry header -->
-												<div class="entry-header">
-													<a href="#"><h2 class="entry-title">Surviving The World’s Most Dangerous Hike</h2></a>
-												</div>
-												<!-- end entry header -->
-												<!-- Start entry content -->
-												<div class="entry-content">
-													<p>It doesn’t matter if it’s just for a day or for an entire week… check out this beach packing list and you’re sure to show up prepared. There’s something rejuvenating about soaking up the sun, swimming in the ocean, and basking in the sea breeze. If you live close enough to a beach that you can take a day trip, you’re one of the lucky ones. All you have to do is pack up your car and go! But it’s still important to make sure you have everything you need for the day so that you don’t have to turn around if you’ve forgotten something.</p>
-													<a href="#" class="btn more">Read More <i class="fal fa-angle-right"></i></a>
-												</div>
-												<!-- End entry content -->
-											</div>
-										</div>
-										<!-- End single blog post -->
-									</div>
-									<div class="col-lg-4 col-sm-6 isotope_item">
-										<!-- Start single blog post -->
-										<div class="single-blog-post">
-											<!-- Start blog post thumbnail -->
-											<div class="post-thumbnail">
-												<img src="{% static 'img/post/g3.jpg' %}" alt="">
-											</div>
-											<!-- End blog post thumbnail -->
-											<div class="single-post-content-thumb">
-												<!-- Start post meta -->
-												<div class="post-meta">
-													<span><i class="fal fa-clock"></i>Sep 11, 2024</span>
-													<span><i class="fad fa-user"></i>Liza De</span>
-													<span><i class="fal fa-comments"></i>12</span>
-												</div>
-												<!-- End post meta -->
-												<!-- start entry header -->
-												<div class="entry-header">
-													<a href="#"><h2 class="entry-title">Greece By land And Sea: Find Your Ideal AdVenture</h2></a>
-												</div>
-												<!-- end entry header -->
-												<!-- Start entry content -->
-												<div class="entry-content">
-													<p>Greece is blessed with natural beauty, idyllic settings, tasty bites and very welcoming people. With so much on offer and thousands of islands dotting its landscapes, it’s easy to see why it remains a perennial favourite. But where to start?</p>
-													<a href="#" class="btn more">Read More <i class="fal fa-angle-right"></i></a>
-												</div>
-												<!-- End entry content -->
-											</div>
-										</div>
-										<!-- End single blog post -->
-									</div>
-									<div class="col-lg-4 col-sm-6 isotope_item">
-										<!-- Start single blog post -->
-										<div class="single-blog-post">
-											<!-- Start blog post thumbnail -->
-											<div class="post-thumbnail">
-												<img src="{% static 'img/post/g4.jpg' %}" alt="">
-											</div>
-											<!-- End blog post thumbnail -->
-											<div class="single-post-content-thumb">
-												<!-- Start post meta -->
-												<div class="post-meta">
-													<span><i class="fal fa-clock"></i>Sep 11, 2024</span>
-													<span><i class="fad fa-user"></i>Liza De</span>
-													<span><i class="fal fa-comments"></i>12</span>
-												</div>
-												<!-- End post meta -->
-												<!-- start entry header -->
-												<div class="entry-header">
-													<a href="#"><h2 class="entry-title">Cruise Through Our Insta-Worthy European Sailing </h2></a>
-												</div>
-												<!-- end entry header -->
-												<!-- Start entry content -->
-												<div class="entry-content">
-													<p>Set a course for your next adventure with inspiration from our Instagram posts featuring Croatia, Greece and Greenland marine adventures. No matter how far inland we live, there’s something about the sea that calls to us.</p>
-													<a href="#" class="btn more">Read More <i class="fal fa-angle-right"></i></a>
-												</div>
-												<!-- End entry content -->
-											</div>
-										</div>
-										<!-- End single blog post -->
-									</div>
-									<div class="col-lg-4 col-sm-6 isotope_item">
-										<!-- Start single blog post -->
-										<div class="single-blog-post">
-											<!-- Start blog post thumbnail -->
-											<div class="post-thumbnail">
-												<img src="{% static 'img/post/g5.jpg' %}" alt="">
-											</div>
-											<!-- End blog post thumbnail -->
-											<div class="single-post-content-thumb">
-												<!-- Start post meta -->
-												<div class="post-meta">
-													<span><i class="fal fa-clock"></i>Sep 11, 2024</span>
-													<span><i class="fad fa-user"></i>Liza De</span>
-													<span><i class="fal fa-comments"></i>12</span>
-												</div>
-												<!-- End post meta -->
-												<!-- start entry header -->
-												<div class="entry-header">
-													<a href="#"><h2 class="entry-title">The Only Beach Packing List You’ll Ever Need</h2></a>
-												</div>
-												<!-- end entry header -->
-												<!-- Start entry content -->
-												<div class="entry-content">
-													<p>Set a course for your next adventure with inspiration from our Instagram posts featuring Croatia, Greece and Greenland marine adventures. No matter how far inland we live, there’s something about the sea that calls to us.</p>
-													<a href="#" class="btn more">Read More <i class="fal fa-angle-right"></i></a>
-												</div>
-												<!-- End entry content -->
-											</div>
-										</div>
-										<!-- End single blog post -->
-									</div>
-									<div class="col-lg-4 col-sm-6 isotope_item">
-										<!-- Start single blog post -->
-										<div class="single-blog-post">
-											<!-- Start blog post thumbnail -->
-											<div class="post-thumbnail">
-												<img src="{% static 'img/post/g6.jpg' %}" alt="">
-											</div>
-											<!-- End blog post thumbnail -->
-											<div class="single-post-content-thumb">
-												<!-- Start post meta -->
-												<div class="post-meta">
-													<span><i class="fal fa-clock"></i>Sep 11, 2024</span>
-													<span><i class="fad fa-user"></i>Liza De</span>
-													<span><i class="fal fa-comments"></i>12</span>
-												</div>
-												<!-- End post meta -->
-												<!-- start entry header -->
-												<div class="entry-header">
-													<a href="#"><h2 class="entry-title">Think You’ve Seen And Done Europe’s Holiday Hotspots? </h2></a>
-												</div>
-												<!-- end entry header -->
-												<!-- Start entry content -->
-												<div class="entry-content">
-													<p>It’s time to go beyond the tourist traps to reconsider some of Europe’s most beloved destinations. They’re popular for a reason — but we want to show you a whole other side simply by lacing up your hiking boots. New views are a given but you'll also gain fresh perspective.</p>
-													<a href="#" class="btn more">Read More <i class="fal fa-angle-right"></i></a>
-												</div>
-												<!-- End entry content -->
-											</div>
-										</div>
-										<!-- End single blog post -->
-									</div>
-									<div class="col-lg-4 col-sm-6 isotope_item">
-										<!-- Start single blog post -->
-										<div class="single-blog-post">
-											<!-- Start blog post thumbnail -->
-											<div class="post-thumbnail">
-												<img src="{% static 'img/post/g7.jpg' %}" alt="">
-											</div>
-											<!-- End blog post thumbnail -->
-											<div class="single-post-content-thumb">
-												<!-- Start post meta -->
-												<div class="post-meta">
-													<span><i class="fal fa-clock"></i>Sep 11, 2024</span>
-													<span><i class="fad fa-user"></i>Liza De</span>
-													<span><i class="fal fa-comments"></i>12</span>
-												</div>
-												<!-- End post meta -->
-												<!-- start entry header -->
-												<div class="entry-header">
-													<a href="#"><h2 class="entry-title">How To Photograph The Northern Lights</h2></a>
-												</div>
-												<!-- end entry header -->
-												<!-- Start entry content -->
-												<div class="entry-content">
-													<p>Destinations like Iceland and Norway’s northern regions offer some of the best options. Although the lights are always on display in these parts of the world, the almost-never-setting sun of summertime means they aren’t visible to the naked eye. Look to travel.</p>
-													<a href="#" class="btn more">Read More <i class="fal fa-angle-right"></i></a>
-												</div>
-												<!-- End entry content -->
-											</div>
-										</div>
-										<!-- End single blog post -->
-									</div>
-									<div class="col-lg-4 col-sm-6 isotope_item">
-										<!-- Start single blog post -->
-										<div class="single-blog-post">
-											<!-- Start blog post thumbnail -->
-											<div class="post-thumbnail">
-												<img src="{% static 'img/post/g8.jpg' %}" alt="">
-											</div>
-											<!-- End blog post thumbnail -->
-											<div class="single-post-content-thumb">
-												<!-- Start post meta -->
-												<div class="post-meta">
-													<span><i class="fal fa-clock"></i>Sep 11, 2024</span>
-													<span><i class="fad fa-user"></i>Liza De</span>
-													<span><i class="fal fa-comments"></i>12</span>
-												</div>
-												<!-- End post meta -->
-												<!-- start entry header -->
-												<div class="entry-header">
-													<a href="#"><h2 class="entry-title">Sailing Greece: The Ultimate Island Hopping Experience</h2></a>
-												</div>
-												<!-- end entry header -->
-												<!-- Start entry content -->
-												<div class="entry-content">
-													<p>Sailing is a whole new world of travel; suddenly, the travel time on a trip that was once an inconvenience becomes a highlight. In between islands you glide through the bluest of waters, feel the warm breeze on your skin, and get views of the islands.</p>
-													<a href="#" class="btn more">Read More <i class="fal fa-angle-right"></i></a>
-												</div>
-												<!-- End entry content -->
-											</div>
-										</div>
-										<!-- End single blog post -->
-									</div>
-									<div class="col-lg-4 col-sm-6 isotope_item">
-										<!-- Start single blog post -->
-										<div class="single-blog-post">
-											<!-- Start blog post thumbnail -->
-											<div class="post-thumbnail">
-												<img src="{% static 'img/post/g9.jpg' %}" alt="">
-											</div>
-											<!-- End blog post thumbnail -->
-											<div class="single-post-content-thumb">
-												<!-- Start post meta -->
-												<div class="post-meta">
-													<span><i class="fal fa-clock"></i>Sep 11, 2024</span>
-													<span><i class="fad fa-user"></i>Liza De</span>
-													<span><i class="fal fa-comments"></i>12</span>
-												</div>
-												<!-- End post meta -->
-												<!-- start entry header -->
-												<div class="entry-header">
-													<a href="#"><h2 class="entry-title">Five Things You Probably Didn’t Know About Trekking</h2></a>
-												</div>
-												<!-- end entry header -->
-												<!-- Start entry content -->
-												<div class="entry-content">
-													<p>If you’re reading this post, you probably already know a few things about Trekking Mont Blanc. After all, it is one of the most famous treks in the world. It’s challenging, incredibly scenic, and offers.</p>
-													<a href="#" class="btn more">Read More <i class="fal fa-angle-right"></i></a>
-												</div>
-												<!-- End entry content -->
-											</div>
-										</div>
-										<!-- End single blog post -->
-									</div>
+									{% endfor %}
 								</div>
 							</div>
 							<!-- End Blog Post -->
